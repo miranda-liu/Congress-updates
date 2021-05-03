@@ -10,8 +10,8 @@
         android:id="@+id/editText_mainActivity_stateAbbrievation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
-        android:hint="Enter your state abbrievation"
+        android:layout_marginTop="200dp"
+        android:hint="Search by state abbrievation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,20 +38,15 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_mainActivity_house" />
 
-    <!-- control + / -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/menu"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/editText_mainActivity_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/label">
-
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="none"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_marginTop="270dp"
+        android:hint="Search by name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
