@@ -21,7 +21,7 @@ data class MembersInChamberResult(
         data class Member(
             val api_uri: String,
             val contact_form: String,
-            val cook_pvi: Any,
+            val cook_pvi: String?, // how much a district leans to ____ party
             val crp_id: String,
             val cspan_id: String,
             val date_of_birth: String,
