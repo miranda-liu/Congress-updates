@@ -8,8 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.congressupdates.R
 import com.example.congressupdates.models.MembersInChamberResult
+import kotlinx.android.synthetic.main.congress_item.view.*
 
-class CongressAdapter(private val congressList: List<MembersInChamberResult>) : RecyclerView.Adapter<CongressAdapter.ViewHolder>() {
+class CongressAdapter(private val congressList: List<MembersInChamberResult.Result.Member>) : RecyclerView.Adapter<CongressAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -33,7 +34,12 @@ class CongressAdapter(private val congressList: List<MembersInChamberResult>) : 
     }
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
 
-        // put something here
+        // define binding function
+        fun bind (congressPerson: MembersInChamberResult.Result.Member) {
+            itemView.textView_Congress.text = congressPerson.first_name + " " + congressPerson.last_name
+            itemView.textView_Email.text = congressPerson.phone + " " + congressPerson.facebook_account
+        }
+
 
     }
 }
