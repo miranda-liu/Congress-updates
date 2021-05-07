@@ -40,6 +40,5 @@ class CongressAdapter(private val congressList: List<MembersInChamberResult.Resu
             itemView.textView_Email.text = congressPerson.phone + " " + congressPerson.facebook_account
         }
 
-
     }
 }
