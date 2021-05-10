@@ -39,4 +39,5 @@ object ServiceBuilder {
     fun <T> buildService2 (serviceType :Class<T>):T{
         return committeeRetrofit.create(serviceType)
     }
+
 }
