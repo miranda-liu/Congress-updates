@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activities.CongressDetailActivity"></activity>
         <activity android:name=".activities.LocationSearchActivity" />
+        <activity android:name=".activities.OtherInfoActivity" />
         <activity android:name=".activities.LaunchSearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
