@@ -20,6 +20,11 @@ class LaunchSearchActivity : AppCompatActivity() {
             val nameSearchIntent = Intent(this, NameSearchActivity::class.java)
             startActivity(nameSearchIntent)
         }
+
+        button_launchSearchActivity_otherInfo.setOnClickListener{
+            val otherInfoSearchIntent = Intent(this, OtherInfoActivity::class.java)
+            startActivity(otherInfoSearchIntent)
+        }
     }
 
 }

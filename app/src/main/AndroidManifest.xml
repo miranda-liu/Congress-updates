@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.LocationSearchActivity"></activity>
+        <activity android:name=".activities.CongressDetailActivity"></activity>
+        <activity android:name=".activities.LocationSearchActivity" />
         <activity android:name=".activities.LaunchSearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +21,6 @@
         <activity android:name=".activities.NameSearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
     </application>
