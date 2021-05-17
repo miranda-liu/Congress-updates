@@ -13,6 +13,16 @@ class LocationSearchActivity : AppCompatActivity() {
 
         button_locationSearchActivity_go.setOnClickListener{
             // make the call to search by location
+
+            // when search is clicked, hide the search button
+            // show recycler view w the results
+            // do the query, add results to recycler view
+            // if nothing is found --> toast that nothing can be found
+
+            // when you click back button
+            // override on back pressed and if recycler view is visible, hide recycler view
+            // and show the button and editText again
+            // if button is already visible, super.onbackpress (normal way of going back to last activity)
         }
     }
 }
