@@ -11,7 +11,7 @@ import retrofit2.create
 // instantiates retrofit with OkHttp client which is needed to get the interface working
 
 object ServiceBuilder {
-    private const val URL ="https://api.propublica.org/congress/v1/{congress}/{chamber}/members.json" // base URL
+    private const val URL ="https://api.propublica.org/congress/v1/" // base URL, DON'T CHANGE!!
     private const val committeeURL = "https://api.propublica.org/congress/v1/{congress}/{chamber}/committees.json" //committee URL
 
     //CREATE HTTP CLIENT
