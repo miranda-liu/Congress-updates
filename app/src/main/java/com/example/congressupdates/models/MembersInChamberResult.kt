@@ -8,7 +8,7 @@ data class MembersInChamberResult(
     val copyright: String,
     val results: List<Result>,
     val status: String
-): Parcelable{
+): Parcelable {
     @Parcelize
     data class Result(
         val chamber: String,

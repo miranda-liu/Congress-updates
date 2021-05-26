@@ -15,18 +15,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_nameSearchActivity_name" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_nameSearchActivity_senateOrHouse" />
 
     <EditText
         android:id="@+id/editText_nameSearchActivity_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="50dp"
         android:hint="Enter name here"
-        app:layout_constraintBottom_toTopOf="@+id/button_nameSearchActivity_go"
+        app:layout_constraintBottom_toTopOf="@+id/editText_nameSearchActivity_senateOrHouse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/editText_nameSearchActivity_senateOrHouse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:hint="Senate or House?"
+        app:layout_constraintBottom_toTopOf="@+id/button_nameSearchActivity_go"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_nameSearchActivity_name" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/member_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
