@@ -56,6 +56,7 @@ class OtherInfoActivity : AppCompatActivity() {
                     committee_recycler.visibility = View.VISIBLE
                     Log.d(TAG, "onResponse: " + response.body())
                     if (response.isSuccessful) {
+
                         val committeeList = response.body()?.results?: emptyList<Committee.Result>() // make emptyList of MovieResult if no response from API
                         Log.d(TAG, "onResponse: $committeeList")
                         // Log.d("Response", "movieList size" + movieList.totalResults)
