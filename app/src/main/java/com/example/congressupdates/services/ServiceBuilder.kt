@@ -21,13 +21,13 @@ object ServiceBuilder {
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttp.build())
 
-    private val committeeBuilder = Retrofit.Builder().baseUrl(URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .client(okHttp.build())
+//    private val committeeBuilder = Retrofit.Builder().baseUrl(URL)
+//        .addConverterFactory(GsonConverterFactory.create())
+//        .client(okHttp.build())
 
     //create retrofit Instance
     private val retrofit = builder.build()
-    private val committeeRetrofit = committeeBuilder.build()
+//    private val committeeRetrofit = committeeBuilder.build()
 
     //we will use this class to create an anonymous inner class function that
     //implements Country service Interface
@@ -35,8 +35,8 @@ object ServiceBuilder {
     fun <T> buildService (serviceType :Class<T>):T{
         return retrofit.create(serviceType)
     }
-    fun <T> buildService2 (serviceType :Class<T>):T{
-        return committeeRetrofit.create(serviceType)
-    }
+//    fun <T> buildService2 (serviceType :Class<T>):T{
+//        return committeeRetrofit.create(serviceType)
+//    }
 
 }

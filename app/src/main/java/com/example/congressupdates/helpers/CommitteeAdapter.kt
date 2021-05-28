@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.congressupdates.R
 import com.example.congressupdates.activities.CommitteeDetailActivity
+import com.example.congressupdates.models.Committee
 import com.example.congressupdates.models.Committees
 import kotlinx.android.synthetic.main.activity_committee_item.view.*
 
-class CommitteeAdapter(private val committeeList: List<Committees.Information>) : RecyclerView.Adapter<CommitteeAdapter.ViewHolder>(){
+class CommitteeAdapter(private val committeeList: List<Committee.Result>) : RecyclerView.Adapter<CommitteeAdapter.ViewHolder>(){
 
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,12 +35,13 @@ class CommitteeAdapter(private val committeeList: List<Committees.Information>) 
             return holder.bind(committeeList[position])
 
         }
+
         class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
 
             // define binding function
-            fun bind (committeeGroup: Committees.Information) {
+            fun bind (committeeGroup: Committee.Result) {
                 // this is the preview, when you click on it it brings you to CongressDetailActivity
-                itemView.textView_committeeItem_name.text = committeeGroup.name
+                itemView.textView_committeeItem_name.text = committeeGroup.toString()
 
                 itemView.setOnClickListener{
                     val itemViewIntent = Intent(itemView.context, CommitteeDetailActivity::class.java)

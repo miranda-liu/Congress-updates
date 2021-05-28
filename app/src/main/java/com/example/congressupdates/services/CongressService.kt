@@ -1,6 +1,7 @@
 package com.example.congressupdates.services
 
 import com.example.congressupdates.helpers.Credentials
+import com.example.congressupdates.models.Committee
 import com.example.congressupdates.models.Committees
 import com.example.congressupdates.models.MembersByStateResult
 import com.example.congressupdates.models.MembersInChamberResult
@@ -22,10 +23,12 @@ interface CongressService {
     @Headers("X-API-Key: ${Credentials.apiKey}")
     fun getSenateListbyLocation(@Path("state") state : String) : Call<MembersByStateResult>
 
-    @GET("congress/v1/117/{chamber}/committees.json")
+    @GET("117/senate/committees.json")
     @Headers("X-API-Key: ${Credentials.apiKey}")
     // chamber can be house, senate, or joint
-    fun getCommitteesList(@Path("chamber") chamber : String) : Call<Committees>
+    fun getCommitteesList() : Call<Committee>
+    // @Path("chamber") chamber : String
+
 
     @GET("117/{chamber}/members.json")
     @Headers("X-API-Key: ${Credentials.apiKey}")

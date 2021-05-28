@@ -2,7 +2,7 @@ package com.example.congressupdates.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
-
+// OLD VERSION (MAYBE)
 @Parcelize
 data class Committees(
     val status: String,

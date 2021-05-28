@@ -7,6 +7,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.congressupdates.R
 import com.example.congressupdates.helpers.CommitteeAdapter
+import com.example.congressupdates.models.Committee
 import com.example.congressupdates.models.Committees
 import com.example.congressupdates.services.CongressService
 import com.example.congressupdates.services.ServiceBuilder
@@ -29,8 +30,8 @@ class OtherInfoActivity : AppCompatActivity() {
         button_otherInfoActivity_committees.setOnClickListener {
             // make the call to create a list of all committees
             val destinationService = ServiceBuilder.buildService(CongressService::class.java)
-            val chamberRequestString = "senate"
-            val requestCall = destinationService.getCommitteesList(chamberRequestString)
+            // val chamberRequestString = "senate"
+            val requestCall = destinationService.getCommitteesList()
 
             // when committees is clicked, hide the all buttons
             button_otherInfoActivity_house.visibility = View.GONE
@@ -46,16 +47,16 @@ class OtherInfoActivity : AppCompatActivity() {
             // and show the button and editText again
             // if button is already visible, super.onbackpress (normal way of going back to last activity)
 
-            requestCall.enqueue(object : Callback<Committees> {
-                override fun onFailure(call: Call<Committees>, t: Throwable) {
+            requestCall.enqueue(object : Callback<Committee> {
+                override fun onFailure(call: Call<Committee>, t: Throwable) {
                     Log.d(TAG, "onFailure: " + t.message) // t is the throwable --> data type for a type of error
                 }
 
-                override fun onResponse(call: Call<Committees>, response: Response<Committees>) {
+                override fun onResponse(call: Call<Committee>, response: Response<Committee>) {
                     committee_recycler.visibility = View.VISIBLE
                     Log.d(TAG, "onResponse: " + response.body())
                     if (response.isSuccessful) {
-                        val committeeList = response.body()?.results?: emptyList<Committees.Information>() // make emptyList of MovieResult if no response from API
+                        val committeeList = response.body()?.results?: emptyList<Committee.Result>() // make emptyList of MovieResult if no response from API
                         Log.d(TAG, "onResponse: $committeeList")
                         // Log.d("Response", "movieList size" + movieList.totalResults)
                         committee_recycler.apply {
@@ -71,7 +72,7 @@ class OtherInfoActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (member_recycler.visibility == View.VISIBLE)
+        if (committee_recycler.visibility == View.VISIBLE)
             super.onBackPressed()
     }
 
