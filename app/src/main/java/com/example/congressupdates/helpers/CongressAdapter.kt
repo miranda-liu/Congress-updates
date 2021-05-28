@@ -16,6 +16,7 @@ class CongressAdapter(private val congressList: List<MembersByStateResult.Member
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view  = LayoutInflater.from(parent.context).inflate(R.layout.congress_item,parent,false)
+
         return ViewHolder(view)
     }
 

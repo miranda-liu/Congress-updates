@@ -22,8 +22,10 @@ interface CongressService {
     @Headers("X-API-Key: ${Credentials.apiKey}")
     fun getSenateListbyLocation(@Path("state") state : String) : Call<MembersByStateResult>
 
-//    @GET("{congress}/{chamber}/committees.json")
-//    fun getCommittees(@Path("congress") congress : String, @Path("chamber") chamber : String, @Query("apiKey") apiKey : String)
+    @GET("congress/v1/117/{chamber}/committees.json")
+    @Headers("X-API-Key: ${Credentials.apiKey}")
+    // chamber can be house, senate, or joint
+    fun getCommitteesList(@Path("chamber") chamber : String) : Call<Committees>
 
     @GET("117/{chamber}/members.json")
     @Headers("X-API-Key: ${Credentials.apiKey}")
