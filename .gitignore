@@ -13,3 +13,4 @@
 .externalNativeBuild
 .cxx
 /.idea/vcs.xml
+/app/src/main/java/com/example/congressupdates/helpers/Credentials.kt

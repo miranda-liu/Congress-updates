@@ -8,7 +8,7 @@ data class MembersInChamberResult(
     val copyright: String,
     val results: List<Result>,
     val status: String
-): Parcelable{
+): Parcelable {
     @Parcelize
     data class Result(
         val chamber: String,
@@ -35,13 +35,13 @@ data class MembersInChamberResult(
             val govtrack_id: String,
             val icpsr_id: String,
             val id: String,
-            val ideal_point: Any,
+            val ideal_point: String?,
             val in_office: Boolean,
             val last_name: String,
             val last_updated: String,
-            val leadership_role: Any,
+            val leadership_role: String?,
             val lis_id: String,
-            val middle_name: Any,
+            val middle_name: String?,
             val missed_votes: Int,
             val missed_votes_pct: Double,
             val next_election: String,
@@ -55,7 +55,7 @@ data class MembersInChamberResult(
             val short_title: String,
             val state: String,
             val state_rank: String,
-            val suffix: Any,
+            val suffix: String?,
             val title: String,
             val total_present: Int,
             val total_votes: Int,

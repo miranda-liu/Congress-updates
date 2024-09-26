@@ -4,47 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.NameSearchActivity">
+    tools:context=".activities.OtherInfoActivity">
 
     <Button
-        android:id="@+id/button_nameSearchActivity_go"
+        android:id="@+id/button_otherInfoActivity_house"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp"
+        android:text="House"
+        app:layout_constraintBottom_toTopOf="@+id/button_otherInfoActivity_committees"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_nameSearchActivity_senateOrHouse" />
+        app:layout_constraintTop_toBottomOf="@+id/button_otherInfoActivity_senate" />
 
-    <EditText
-        android:id="@+id/editText_nameSearchActivity_name"
+    <Button
+        android:id="@+id/button_otherInfoActivity_senate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:hint="Enter name here"
-        app:layout_constraintBottom_toTopOf="@+id/editText_nameSearchActivity_senateOrHouse"
+        android:layout_marginBottom="32dp"
+        android:text="Senate"
+        app:layout_constraintBottom_toTopOf="@+id/button_otherInfoActivity_house"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <EditText
-        android:id="@+id/editText_nameSearchActivity_senateOrHouse"
+    <Button
+        android:id="@+id/button_otherInfoActivity_committees"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:hint="Senate or House?"
-        app:layout_constraintBottom_toTopOf="@+id/button_nameSearchActivity_go"
+        android:text="Committees"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_nameSearchActivity_name" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/member_recycler"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        app:layout_constraintTop_toBottomOf="@+id/button_otherInfoActivity_house" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
